@@ -1,1 +1,67 @@
-<p>volunteer-register works!</p>
+<div class="container-fluid d-flex justify-content-center p-lg-2 p-md-2">
+
+    <div class="bg-white d-lg-flex shadow m-4">
+
+        <div class="d-flex w-100 bg-indigo">
+
+            <div class="container text-center m-auto p-3">
+
+                <div class="h4 text-white m-auto font-weight-bold">Create Together Foundation</div>
+                <br><br><br>
+
+                <p class="h5 text-white m-auto text-break">Welcome to our foundation.<br> Here we try to help the needy
+                    people in whichever way we can.</p>
+                <br><br>
+
+                <a class="btn btn-warning" href="#">About Us</a>
+            </div>
+
+        </div>
+
+        <div class="container d-flex w-100 p-3">
+
+            <div class="m-auto">
+
+                <form [formGroup]="volunteerForm" (ngSubmit)="registerVolunteer(volunteerForm.value)" >
+
+                <div class="d-flex">
+                    <div class="form-group">
+                        <label for="vFirstName">First Name</label>
+                        <input class="form-control mb-3" type="text" formControlName="vFirstName" id="vFirstName">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vFirstName">Last Name</label>
+                        <input class="form-control mb-3" type="text" formControlName="vLastName" id="vLastName">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="vEmailId">Email Id</label>
+                    <input class="form-control mb-3" type="email" formControlName="vEmailId" id="vEmailId">
+                </div>
+
+                <div class="form-group">
+                    <label for="vMobileNo">Mobile No.</label>
+                    <input class="form-control mb-3" type="text" formControlName="vMobileNo" id="vMobileNo">
+                </div>
+
+                <div class="form-group">
+                    <label for="vAddress">Address</label>
+                    <textarea class="form-control mb-3" formControlName="vAddress" id="vAddress" cols="22"
+                        placeholder="Your residential address" rows="5"></textarea>
+                </div>
+
+                <p id="result" class="text-success"></p>
+
+                <input class="btn bg-indigo float-right" type="submit" value="Submit">
+
+                </form>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

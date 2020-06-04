@@ -9,3 +9,8 @@ html, body {
 body {
     font-family: 'Nunito', sans-serif !important;
 }
+
+.bg-indigo {
+    background-color: #7986cb;
+    color: white;
+}
