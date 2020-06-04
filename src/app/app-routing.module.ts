@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomePageComponent } from './home-page/home-page.component';
+import { VolunteerRegisterComponent } from './volunteer-register/volunteer-register.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+
+  { path: '', component: HomePageComponent },
+  { path: 'vreg', component: VolunteerRegisterComponent }
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
