@@ -1,1 +1,39 @@
-<p>home-page works!</p>
+<div class="d-flex h-100 bg-white">
+
+    <div class="m-auto">
+        <h1>This <span class="text-muted">is Homepage.</span></h1>
+        <h1><span class="text-muted">This</span> is <span class="text-muted">Homepage.</span></h1>
+        <h1><span class="text-muted">This is</span> Homepage.</h1>
+    </div>
+
+</div>
+
+<div class="d-flex text-center h-100 w-100 bg-light">
+
+    <div class="m-auto">
+        <h1 class="text-primary" id="gallery">Gallery</h1>
+
+        <hr>
+
+        <div id="carouselWithControls" class="carousel slide m-auto" style="width: 60% !important;"
+            data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100 img-fluid" src="{{ firstImage }}" />
+                </div>
+                <div *ngFor="let image of images" class="carousel-item">
+                    <img class="d-block w-100 img-fluid img-thumbnail" src="{{ image }}" />
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselWithControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselWithControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+</div>
