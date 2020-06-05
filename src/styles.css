@@ -11,6 +11,10 @@ body {
 }
 
 .bg-indigo {
-    background-color: #7986cb;
+    background-color: #283593;
     color: white;
+}
+
+.text-indigo {
+    color: #283593 !important;
 }
