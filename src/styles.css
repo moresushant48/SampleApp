@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-html, body {
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+html,
+body {
     margin: 0;
     height: 100%;
 }
@@ -11,8 +12,13 @@ body {
 }
 
 .bg-indigo {
-    background-color: #283593;
-    color: white;
+    background-color: #3f51b5 !important;
+    color: white !important;
+}
+
+.bg-indigo-dark {
+    background-color: #3949ab !important;
+    color: white !important;
 }
 
 .text-indigo {
