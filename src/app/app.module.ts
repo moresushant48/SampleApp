@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { VolunteerRegisterComponent } from './volunteer-register/volunteer-register.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    VolunteerRegisterComponent
+    VolunteerRegisterComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
