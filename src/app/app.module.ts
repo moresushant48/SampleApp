@@ -9,6 +9,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { VolunteerRegisterComponent } from './volunteer-register/volunteer-register.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 
+import { authInterceptorProviders } from "./_helpers/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
