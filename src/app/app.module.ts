@@ -10,13 +10,15 @@ import { VolunteerRegisterComponent } from './volunteer-register/volunteer-regis
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 import { authInterceptorProviders } from "./_helpers/auth.interceptor";
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     VolunteerRegisterComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,34 @@
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-indigo border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center bg-indigo-dark">CreateTogether</div>
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action bg-indigo"></a>
+            <a href="#" class="list-group-item list-group-item-action bg-indigo">Dashboard</a>
+            <a href="#" class="list-group-item list-group-item-action bg-indigo">Volunteers</a>
+            <a href="#" *ngIf="userRole == 'ROLE_ADMIN'" class="list-group-item list-group-item-action bg-indigo">Moderators</a>
+            <a href="#" class="list-group-item list-group-item-action bg-indigo">Events</a>
+            <a href="#" class="list-group-item list-group-item-action bg-indigo">Profile</a>
+            <a href="#" class="list-group-item list-group-item-action bg-indigo">Logout</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+            <button class="btn" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
+
+        </nav>
+
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
