@@ -51,7 +51,7 @@ export class AdminLoginComponent implements OnInit {
       this.tokenStorage.saveUser(data);
 
       this.isLoggedIn = true;
-      window.location.reload();
+      this.router.navigate(['/admin']);
     },
       error =>
         this.message = "Wrong Credentials."
