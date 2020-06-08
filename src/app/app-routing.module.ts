@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'vreg', component: VolunteerRegisterComponent },
   { path: 'auth', component: AdminLoginComponent },
-  { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuardService],
+  { path: 'dashboard', component: AdminDashboardComponent, canActivate: [AuthGuardService],
     children: [
       
   ] }
