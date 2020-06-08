@@ -13,6 +13,8 @@ export class AdminDashboardComponent implements OnInit {
 
   isLoggedIn: boolean = false;
   userRole: string = "norole";
+  userName: string = "noname";
+  userEmail: string = "noemail";
 
   constructor(
     private tokenStorage: TokenStorageService
@@ -25,6 +27,8 @@ export class AdminDashboardComponent implements OnInit {
     this.isLoggedIn = !!this.tokenStorage.getToken();
     if(this.isLoggedIn){
       this.userRole = this.tokenStorage.getUser().roles;
+      this.userName = this.tokenStorage.getUser().username
+      this.userEmail = this.tokenStorage.getUser().email
     }
 
     $('app-root > nav').hide();
