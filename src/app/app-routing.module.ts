@@ -5,6 +5,7 @@ import { VolunteerRegisterComponent } from './volunteer-register/volunteer-regis
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AuthGuardService } from './_services/auth-guard.service';
+import { DashboardVolunteersComponent } from './dashboard-volunteers/dashboard-volunteers.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'auth', component: AdminLoginComponent },
   { path: 'dashboard', component: AdminDashboardComponent, canActivate: [AuthGuardService],
     children: [
-      
+      { path: 'volunteer', component: DashboardVolunteersComponent }
   ] }
 ];
 
