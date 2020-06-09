@@ -11,6 +11,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 import { authInterceptorProviders } from "./_helpers/auth.interceptor";
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { DashboardVolunteersComponent } from './dashboard-volunteers/dashboard-volunteers.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     HomePageComponent,
     VolunteerRegisterComponent,
     AdminLoginComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    DashboardVolunteersComponent
   ],
   imports: [
     BrowserModule,
