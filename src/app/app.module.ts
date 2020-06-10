@@ -6,8 +6,8 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { VolunteerRegisterComponent } from './volunteer-register/volunteer-register.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 import { authInterceptorProviders } from "./_helpers/auth.interceptor";
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
@@ -17,8 +17,8 @@ import { DashboardVolunteersComponent } from './dashboard-volunteers/dashboard-v
   declarations: [
     AppComponent,
     HomePageComponent,
-    VolunteerRegisterComponent,
-    AdminLoginComponent,
+    RegisterComponent,
+    LoginComponent,
     AdminDashboardComponent,
     DashboardVolunteersComponent
   ],

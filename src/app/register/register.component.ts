@@ -5,12 +5,12 @@ import { HttpClient } from '@angular/common/http';
 declare var $ : any;
 
 @Component({
-  selector: 'app-volunteer-register',
-  templateUrl: './volunteer-register.component.html',
-  styleUrls: ['./volunteer-register.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
 
-export class VolunteerRegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   volunteerForm: FormGroup;
 
