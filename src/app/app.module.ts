@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { authInterceptorProviders } from "./_helpers/auth.interceptor";
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { DashboardVolunteersComponent } from './dashboard-volunteers/dashboard-volunteers.component';
+import { DashboardModeratorsComponent } from './dashboard-moderators/dashboard-moderators.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardVolunteersComponent } from './dashboard-volunteers/dashboard-v
     RegisterComponent,
     LoginComponent,
     AdminDashboardComponent,
-    DashboardVolunteersComponent
+    DashboardVolunteersComponent,
+    DashboardModeratorsComponent
   ],
   imports: [
     BrowserModule,
