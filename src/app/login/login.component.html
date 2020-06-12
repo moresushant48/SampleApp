@@ -1,14 +1,20 @@
 <div class="container-fluid d-flex justify-content-center p-lg-5 p-md-2">
 
-    <div class="d-flex">
+    <div class="d-lg-flex">
 
-        <div class="bg-indigo d-flex p-lg-4 p-3 my-4">
+        <div class="bg-indigo d-flex p-lg-4 p-3 my-lg-4">
 
-            <h4 class="m-auto" style="writing-mode: vertical-lr; text-orientation: upright">ADMIN</h4>
+            <div class="m-auto text-center">
 
+                <h4>Don't Have an account ?</h4>
+                <p>Join Us. <br> Serve the Nation.</p>
+
+                <a routerLink="/signup" class="btn btn-outline-light">Sign Up</a>
+
+            </div>
         </div>
 
-        <div class="shadow-lg d-flex p-lg-5 p-4">
+        <div class="shadow d-flex p-lg-5 p-4 border border-light">
 
             <div class="m-auto">
                 <form [formGroup]="adminLoginForm" (ngSubmit)="login(adminLoginForm.value)">
@@ -16,27 +22,23 @@
                         <label for="email">Email Id</label>
                         <input id="email" formControlName="email" type="email" class="form-control">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input id="password" formControlName="password" type="password" class="form-control">
                     </div>
-    
+
                     <p class="font-weight-bold text-center">{{ message }}</p>
 
-                    <input type="submit" class="btn btn-warning float-right mt-3" value="Login">
-    
+                    <input type="submit" class="btn btn-indigo bg-outline- float-right mt-3" value="Login">
+
                 </form>
             </div>
 
         </div>
 
-        <div class="bg-indigo d-flex p-lg-4 p-3 my-4">
+        <div class="bg-indigo d-flex p-lg-4 p-3 my-lg-4"></div>
 
-            <h4 class="m-auto" style="writing-mode: vertical-lr; text-orientation: upright">LOGIN</h4>
-
-        </div>
-    
     </div>
 
 </div>

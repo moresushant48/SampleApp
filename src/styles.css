@@ -22,5 +22,14 @@ body {
 }
 
 .text-indigo {
-    color: #283593 !important;
+    color: #3f51b5 !important;
+}
+
+.border-indigo {
+    border: 1px solid #3f51b5 !important;
+}
+
+.btn-indigo {
+    border: 1px solid #3f51b5 !important;
+    color: #3f51b5 !important;
 }
