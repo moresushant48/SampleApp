@@ -17,37 +17,39 @@
 
         </div>
 
-        <div class="container d-flex w-100 p-3">
+        <div class="container d-flex w-100 p-3 py-5">
 
             <div class="m-auto">
 
-                <form [formGroup]="volunteerForm" (ngSubmit)="registerVolunteer(volunteerForm.value)">
+                <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
 
                     <div class="d-flex">
+
                         <div class="form-group">
-                            <label for="vFirstName">First Name</label>
-                            <input class="form-control mb-3" type="text" formControlName="vFirstName" id="vFirstName">
+                            <label for="firstName">First Name</label>
+                            <input class="form-control mb-3" type="text" formControlName="firstName" id="firstName">
                         </div>
 
                         <div class="form-group">
-                            <label for="vFirstName">Last Name</label>
-                            <input class="form-control mb-3" type="text" formControlName="vLastName" id="vLastName">
+                            <label for="lastName">Last Name</label>
+                            <input class="form-control mb-3" type="text" formControlName="lastName" id="lastName">
                         </div>
+
                     </div>
 
                     <div class="form-group">
-                        <label for="vEmailId">Email Id</label>
-                        <input class="form-control mb-3" type="email" formControlName="vEmailId" id="vEmailId">
+                        <label for="email">Email Id</label>
+                        <input class="form-control mb-3" type="email" formControlName="email" id="email">
                     </div>
 
                     <div class="form-group">
-                        <label for="vMobileNo">Mobile No.</label>
-                        <input class="form-control mb-3" type="text" formControlName="vMobileNo" id="vMobileNo">
+                        <label for="mobileno">Mobile No.</label>
+                        <input class="form-control mb-3" type="text" formControlName="mobileno" id="mobileno">
                     </div>
 
                     <div class="form-group">
-                        <label for="vAddress">Address</label>
-                        <textarea class="form-control mb-3" formControlName="vAddress" id="vAddress" cols="22" placeholder="Your residential address" rows="5"></textarea>
+                        <label for="password">Password.</label>
+                        <input class="form-control mb-3" type="password" formControlName="password" id="password">
                     </div>
 
                     <p id="result" class="text-success"></p>

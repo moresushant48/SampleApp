@@ -12,7 +12,7 @@ declare var $ : any;
 
 export class RegisterComponent implements OnInit {
 
-  volunteerForm: FormGroup;
+  registerForm: FormGroup;
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
@@ -21,32 +21,38 @@ export class RegisterComponent implements OnInit {
   }
 
   blankForm(){
-    this.volunteerForm = this.fb.group({
-      vFirstName: '',
-      vLastName: '',
-      vEmailId: '',
-      vMobileNo: '',
-      vAddress: ''
+    this.registerForm = this.fb.group({
+      firstName: '',
+      lastName: '',
+      email: '',
+      mobileno: '',
+      password: ''
     })
   }
 
-  registerVolunteer(volunteer : Volunteer) {
+  register(volunteer : Volunteer) {
+  
+    $("#result").addClass("alert alert-warning")
+      .html("Processing...");
     
-    $("#result").html("Processing...");
-
-    this.blankForm();
-    
-    this.http.post('http://localhost:9090/api/post/volunteer', volunteer).subscribe(
-      (response) => $("#result").html("Registered Succefully."),
+    this.http.post('http://localhost:9090/api/auth/signup', volunteer).subscribe(
+      (response) => { 
+        $("#result")
+          .removeClass("alert-warning")
+          .addClass("alert alert-success")
+          .html("Registered Successfully.")
+      },
       (error) => console.log(error)
-    ) 
+    )
+    
+    this.blankForm();
   }
 }
 
 export class Volunteer {
-  vFirstName: string;
-  vLastName: string;
-  vEmailId: string;
-  vMobileNo: string;
-  vAddress: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  mobileno: string;
+  password: string;
 }
