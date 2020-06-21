@@ -9,15 +9,17 @@
             <li class="nav-item ml-auto">
                 <a class="nav-link" routerLink="">Home</a>
             </li>
-            <li class="nav-item ml-auto">
-                <a class="nav-link" routerLink="signup">Sign Up</a>
-            </li>
-            <li class="nav-item ml-auto">
-                <a class="nav-link" routerLink="signin">Login</a>
-            </li>
-            <li *ngIf="isLoggedIn" class="nav-item ml-auto">
+            <li *ngIf="isLoggedIn; else signinup" class="nav-item ml-auto">
                 <a class="nav-link" (click)="logout()">Logout</a>
             </li>
+            <ng-template #signinup>
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" routerLink="signup">Sign Up</a>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" routerLink="signin">Login</a>
+                </li>
+            </ng-template>
         </ul>
     </div>
 </nav>
