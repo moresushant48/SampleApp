@@ -4,27 +4,35 @@
     <div class="bg-indigo border-right" id="sidebar-wrapper">
         <div class="sidebar-heading text-center bg-indigo-dark">CreateTogether</div>
         <div class="list-group mt-3">
-            <a href="#" class="list-group-item list-group-item-action bg-indigo d-flex">
+            <a href="#" *ngIf="userRole == 'ROLE_ADMIN' || userRole == 'ROLE_MODERATOR'" class="list-group-item list-group-item-action bg-indigo d-flex">
                 <li class="fa fa-chart-line fa-lg col-3"></li>
                 <span class="col-9">Dashboard</span>
             </a>
-            <a routerLink="volunteer" class="list-group-item list-group-item-action bg-indigo d-flex">
+            <a routerLink="volunteer" *ngIf="userRole == 'ROLE_ADMIN' || userRole == 'ROLE_MODERATOR'" class="list-group-item list-group-item-action bg-indigo d-flex">
+                <li class="fa fa-medal fa-lg col-3"></li>
+                <span class="col-9">Interns</span>
+            </a>
+            <a routerLink="volunteer" *ngIf="userRole == 'ROLE_ADMIN' || userRole == 'ROLE_MODERATOR'" class="list-group-item list-group-item-action bg-indigo d-flex">
                 <li class="fa fa-hands-helping fa-lg col-3"></li>
                 <span class="col-9">Volunteers</span>
             </a>
-            <a routerLink="moderators" class="list-group-item list-group-item-action bg-indigo d-flex">
+            <a routerLink="moderators" *ngIf="userRole == 'ROLE_ADMIN'" class="list-group-item list-group-item-action bg-indigo d-flex">
                 <li class="fa fa-user-edit fa-lg col-3"></li>
                 <span class="col-9">Moderators</span>
             </a>
-            <a href="#" class="list-group-item list-group-item-action bg-indigo d-flex">
+            <a href="#" *ngIf="(userRole == 'ROLE_ADMIN' || userRole == 'ROLE_MODERATOR')" class="list-group-item list-group-item-action bg-indigo d-flex">
                 <li class="fa fa-calendar-alt fa-lg col-3"></li>
-                <span class="col-9">Events</span>
+                <span class="col-9">Prog & Events</span>
+            </a>
+            <a href="#" *ngIf="userRole == 'ROLE_USER'" class="list-group-item list-group-item-action bg-indigo d-flex">
+                <li class="fa fa-quote-left fa-lg col-3"></li>
+                <span class="col-9">Posts</span>
             </a>
             <a href="#" class="list-group-item list-group-item-action bg-indigo d-flex">
                 <li class="fa fa-id-card-alt fa-lg col-3"></li>
                 <span class="col-9">Profile</span>
             </a>
-            <a href="#" class="list-group-item list-group-item-action bg-indigo d-flex">
+            <a (click)="logout()" class="list-group-item list-group-item-action bg-indigo d-flex">
                 <li class="fa fa-sign-out-alt fa-lg col-3"></li>
                 <span class="col-9">Logout</span>
             </a>
