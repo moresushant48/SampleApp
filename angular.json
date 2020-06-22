@@ -45,7 +45,8 @@
                             "./node_modules/datatables.net-buttons/js/buttons.html5.js",
                             "./node_modules/datatables.net-buttons/js/buttons.print.js",
                             "./node_modules/datatables.net-responsive/js/dataTables.responsive.js",
-                            "./node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.js"
+                            "./node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.js",
+                            "./node_modules/bootbox/dist/bootbox.min.js"
                         ]
                     },
                     "configurations": {

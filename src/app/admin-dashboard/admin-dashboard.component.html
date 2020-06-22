@@ -20,11 +20,11 @@
                 <li class="fa fa-user-edit fa-lg col-3"></li>
                 <span class="col-9">Moderators</span>
             </a>
-            <a href="#" *ngIf="(userRole == 'ROLE_ADMIN' || userRole == 'ROLE_MODERATOR')" class="list-group-item list-group-item-action bg-indigo d-flex">
+            <a routerLink="posts" *ngIf="(userRole == 'ROLE_ADMIN' || userRole == 'ROLE_MODERATOR')" class="list-group-item list-group-item-action bg-indigo d-flex">
                 <li class="fa fa-calendar-alt fa-lg col-3"></li>
                 <span class="col-9">Prog & Events</span>
             </a>
-            <a href="#" *ngIf="userRole == 'ROLE_USER'" class="list-group-item list-group-item-action bg-indigo d-flex">
+            <a routerLink="posts" *ngIf="userRole == 'ROLE_USER'" class="list-group-item list-group-item-action bg-indigo d-flex">
                 <li class="fa fa-quote-left fa-lg col-3"></li>
                 <span class="col-9">Posts</span>
             </a>

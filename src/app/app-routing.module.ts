@@ -7,6 +7,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AuthGuardService } from './_services/auth-guard.service';
 import { DashboardVolunteersComponent } from './dashboard-volunteers/dashboard-volunteers.component';
 import { DashboardModeratorsComponent } from './dashboard-moderators/dashboard-moderators.component';
+import { DashboardPostFormComponent } from './dashboard-post-form/dashboard-post-form.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'dashboard', component: AdminDashboardComponent, canActivate: [AuthGuardService],
     children: [
       { path: 'volunteer', component: DashboardVolunteersComponent },
-      { path: 'moderators', component: DashboardModeratorsComponent }
+      { path: 'moderators', component: DashboardModeratorsComponent },
+      { path: 'posts', component: DashboardPostFormComponent }
   ] }
 ];
 

@@ -1,0 +1,85 @@
+<main>
+
+    <nav class="container-fluid">
+
+        <ul class="nav justify-content-end">
+
+            <li class="nav-item m-2">
+                <button class="btn btn-indigo" (click)="newPost()"><i class="fa fa-plus mr-2"></i>New Post</button>
+            </li>
+
+            <li class="nav-item m-2" *ngIf="userRole == 'ROLE_ADMIN'">
+                <button class="btn btn-indigo" (click)="pending()"><i class="fa fa-bell mr-2"></i>Pending Approvals</button>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <div class="container-fluid">
+
+        <ul class="nav nav-tabs nav-fill">
+
+            <li class="nav-item">
+
+                <a class="nav-link active" href="#programs" data-toggle="tab">Programs</a>
+
+            </li>
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="#events" data-toggle="tab">Events</a>
+
+            </li>
+
+        </ul>
+
+        <div class="tab-content">
+
+            <div id="programs" class="tab-pane fade show active">
+
+                <div class="table-responsive">
+
+                    <table id="tblPrograms" class="table table-hover">
+                        <caption>List of Programs</caption>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Title</th>
+                                <th>Subtitle</th>
+                                <th>Summary</th>
+                                <th>Published</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div id="events" class="tab-pane fade">
+
+                <div class="table-responsive">
+
+                    <table id="tblEvents" class="table table-hover">
+                        <caption>List of Events</caption>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Title</th>
+                                <th>Subtitle</th>
+                                <th>Summary</th>
+                                <th>Published</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
