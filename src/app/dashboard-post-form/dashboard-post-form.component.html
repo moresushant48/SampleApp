@@ -5,11 +5,11 @@
         <ul class="nav justify-content-end">
 
             <li class="nav-item m-2">
-                <button class="btn btn-indigo" (click)="newPost()"><i class="fa fa-plus mr-2"></i>New Post</button>
+                <button class="btn btn-indigo" data-toggle="modal" data-target="#postFormModal"><i class="fa fa-plus mr-2"></i>New Post</button>
             </li>
 
             <li class="nav-item m-2" *ngIf="userRole == 'ROLE_ADMIN'">
-                <button class="btn btn-indigo" (click)="pending()"><i class="fa fa-bell mr-2"></i>Pending Approvals</button>
+                <button class="btn btn-indigo" (click)="pending()" data-toggle="modal" data-target="#pendingModal"><i class="fa fa-bell mr-2"></i>Pending Approvals</button>
             </li>
 
         </ul>
@@ -44,7 +44,6 @@
                         <caption>List of Programs</caption>
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Title</th>
                                 <th>Subtitle</th>
                                 <th>Summary</th>
@@ -65,7 +64,6 @@
                         <caption>List of Events</caption>
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Title</th>
                                 <th>Subtitle</th>
                                 <th>Summary</th>
@@ -81,5 +79,123 @@
         </div>
 
     </div>
+
+    <div id="postFormModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="postFormTitle" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+
+            <div class="modal-content">
+                <form [formGroup]="postForm" (ngSubmit)="submitPostForm(postForm.value)">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="postFormTitle">New Article</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="postTitle">Title</label>
+                            <input class="form-control mb-3" type="text" formControlName="postTitle" id="postTitle">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postMetaTitle">Subtitle</label>
+                            <input class="form-control mb-3" type="text" formControlName="postMetaTitle" id="postMetaTitle">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postSummary">Summary</label>
+                            <textarea class="form-control mb-3" type="postSummary" formControlName="postSummary" id="postSummary"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postContent">Content</label>
+                            <textarea class="form-control mb-3" formControlName="postContent" id="postContent" rows="8"></textarea>
+                        </div>
+
+                        <p class="text-muted">Note: Your article will be sent to Admins for Checking. Kindly wait for Approval.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                        <input class="btn btn-indigo float-right" type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PENDING APPROVAL MODAL START -->
+
+    <div id="pendingModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="pendingTitle" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pendingTitle">Pending articles to be published.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <td>#</td>
+                                <td>Article</td>
+                                <td>Category</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let postId of pendingPosts; let i = index" id="id{{i}}">
+                                <td>{{ i+1 }}</td>
+                                <td><a target="_BLANK" routerLink="/posts/{{ postId }}">Read Here</a></td>
+                                <td>
+                                    <select id="select{{i}}">
+                                        <option value="UNSPECIFIED">Unspecified</option>
+                                        <option value="PROGRAMS">Programs</option>
+                                        <option value="EVENTS">Events</option>
+                                    </select>
+                                </td>
+                                <td><button id="btnUpdatePending{{i}}" class="btn btn-indigo" (click)="updatePending(i,postId)">Save</button></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PENDING APPROVAL MODAL END -->
+
+    <!-- RESPONSE TOAST FOR NEW POST START -->
+
+    <div id="postToast" class="toast bg-indigo" style="position: absolute; bottom: 0; right: 0; margin: 18px;" role="alert" data-delay="2000" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="mr-auto">Bootstrap</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+            {{postResponse}}
+        </div>
+    </div>
+
+    <!-- RESPONSE TOAST FOR NEW POST END -->
 
 </main>
